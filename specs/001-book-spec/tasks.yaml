@@ -1,0 +1,1610 @@
+tasks:
+  - id: T001
+    title: Create project structure per implementation plan
+    description: Create the complete project structure as defined in the implementation plan, including all necessary directories and initial files
+    acceptanceCriteria:
+      - All required directories are created according to the plan
+      - Basic file structure is established
+      - Directory permissions are properly set
+      - Initial configuration files are in place
+      - Structure matches the implementation plan specification
+    priority: P0
+    estimate: 4 hours
+    labels:
+      - config
+      - setup
+    dependencies: []
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T002
+    title: Initialize Docusaurus project with custom theme
+    description: Set up the Docusaurus project with a custom theme suitable for educational content
+    acceptanceCriteria:
+      - Docusaurus project is successfully initialized
+      - Custom theme is applied and functional
+      - Basic styling matches educational content requirements
+      - Site builds without errors
+      - Configuration files are properly set up
+    priority: P0
+    estimate: 6 hours
+    labels:
+      - config
+      - docs
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T003
+    title: Create docs/modules/ directory structure for all 12 modules
+    description: Create the directory structure for all 12 book modules with proper naming conventions
+    acceptanceCriteria:
+      - All 12 module directories are created
+      - Directory naming follows the specified convention
+      - Each module directory has a diagrams subdirectory
+      - Structure is consistent across all modules
+      - Directory structure matches the implementation plan
+    priority: P0
+    estimate: 2 hours
+    labels:
+      - docs
+      - config
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T004
+    title: Create static assets directories (diagrams, images, videos)
+    description: Create the static assets directories for storing visual content
+    acceptanceCriteria:
+      - static/diagrams/ directory is created
+      - static/images/ directory is created
+      - static/videos/ directory is created
+      - Directory structure is properly organized
+      - Directories have appropriate permissions
+    priority: P0
+    estimate: 1 hour
+    labels:
+      - config
+      - assets
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T005
+    title: Create code-examples/ directory structure for all modules
+    description: Create the directory structure for code examples organized by module
+    acceptanceCriteria:
+      - All 12 module subdirectories are created under code-examples/
+      - Directory naming follows the specified convention
+      - Structure is consistent across all modules
+      - Each directory is ready for code example files
+      - Directory structure matches the implementation plan
+    priority: P0
+    estimate: 2 hours
+    labels:
+      - config
+      - code
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T006
+    title: Create hardware/ directory with subdirectories
+    description: Create the hardware directory structure for BOMs, diagrams, and assembly guides
+    acceptanceCriteria:
+      - hardware/boms/ directory is created
+      - hardware/diagrams/ directory is created
+      - hardware/assembly-guides/ directory is created
+      - Directory structure is properly organized
+      - Structure matches the implementation plan
+    priority: P0
+    estimate: 1 hour
+    labels:
+      - config
+      - hardware
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T007
+    title: Create manifest/ directory with modules.json template
+    description: Create the manifest directory and initialize the modules.json template
+    acceptanceCriteria:
+      - manifest/ directory is created
+      - modules.json template is created with proper structure
+      - Template includes all required fields for module metadata
+      - JSON structure is valid
+      - Template matches the implementation plan
+    priority: P0
+    estimate: 2 hours
+    labels:
+      - config
+      - manifest
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T008
+    title: Set up package.json with Docusaurus dependencies
+    description: Configure package.json with all necessary Docusaurus and related dependencies
+    acceptanceCriteria:
+      - package.json includes all required Docusaurus dependencies
+      - Dependencies are properly versioned
+      - Scripts for development and build are configured
+      - Dependencies match the implementation plan
+      - Installation works without errors
+    priority: P0
+    estimate: 3 hours
+    labels:
+      - config
+      - dependencies
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T009
+    title: Configure docusaurus.config.js with basic settings
+    description: Set up the main Docusaurus configuration file with basic settings
+    acceptanceCriteria:
+      - docusaurus.config.js is properly configured
+      - Basic site settings are defined
+      - Navigation structure is set up
+      - Configuration matches the implementation plan
+      - Site builds successfully with the configuration
+    priority: P0
+    estimate: 4 hours
+    labels:
+      - config
+      - docs
+    dependencies:
+      - T002
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T010
+    title: Create initial sidebars.js with placeholder structure
+    description: Create the sidebars configuration file with placeholder structure for modules
+    acceptanceCriteria:
+      - sidebars.js file is created
+      - Placeholder structure for all 12 modules is defined
+      - Navigation hierarchy is properly organized
+      - Configuration matches Docusaurus requirements
+      - Sidebar renders without errors
+    priority: P0
+    estimate: 3 hours
+    labels:
+      - config
+      - docs
+    dependencies:
+      - T003
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T011
+    title: Set up GitHub Actions workflow for CI/CD
+    description: Configure GitHub Actions for continuous integration and deployment
+    acceptanceCriteria:
+      - GitHub Actions workflow files are created
+      - Build process is automated
+      - Deployment process is configured
+      - Workflow triggers properly
+      - Actions run without errors
+    priority: P0
+    estimate: 5 hours
+    labels:
+      - config
+      - ci
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T012
+    title: Implement basic linting configuration
+    description: Set up linting configuration for Markdown, JavaScript, and other files
+    acceptanceCriteria:
+      - ESLint configuration is set up
+      - Markdown linting is configured
+      - Configuration rules match project standards
+      - Linting runs without errors
+      - Configuration is documented
+    priority: P0
+    estimate: 3 hours
+    labels:
+      - config
+      - quality
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T013
+    title: Create module template with proper frontmatter
+    description: Create a reusable template for book modules with proper frontmatter
+    acceptanceCriteria:
+      - Template includes all required frontmatter fields
+      - Template follows Docusaurus conventions
+      - Template includes learning objectives section
+      - Template includes prerequisites section
+      - Template includes difficulty level field
+    priority: P0
+    estimate: 3 hours
+    labels:
+      - docs
+      - template
+    dependencies: []
+    responsibleRole: writer
+    sprint: Sprint 1
+  - id: T014
+    title: Create src/ directory with components, pages, and css subdirectories
+    description: Create the source directory structure for custom Docusaurus components
+    acceptanceCriteria:
+      - src/ directory is created
+      - src/components/ subdirectory is created
+      - src/pages/ subdirectory is created
+      - src/css/ subdirectory is created
+      - Directory structure matches Docusaurus requirements
+    priority: P0
+    estimate: 1 hour
+    labels:
+      - config
+      - code
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T015
+    title: Set up babel.config.js for custom components
+    description: Configure Babel for custom Docusaurus components
+    acceptanceCriteria:
+      - babel.config.js is properly configured
+      - Configuration supports custom components
+      - Configuration matches Docusaurus requirements
+      - Build process works with Babel configuration
+      - Configuration is documented
+    priority: P0
+    estimate: 2 hours
+    labels:
+      - config
+      - code
+    dependencies:
+      - T014
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T016
+    title: Create _category_.json template for module directories
+    description: Create a category template for module directories to define navigation
+    acceptanceCriteria:
+      - _category_.json template is created
+      - Template includes proper label and position fields
+      - Template includes link configuration
+      - Template matches Docusaurus requirements
+      - Template can be reused across modules
+    priority: P0
+    estimate: 2 hours
+    labels:
+      - config
+      - docs
+    dependencies:
+      - T003
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T017
+    title: Create custom Docusaurus components for educational content
+    description: Develop custom components for learning objectives, prerequisites, and other educational elements
+    acceptanceCriteria:
+      - Learning objectives component is created
+      - Prerequisites component is created
+      - Difficulty level component is created
+      - Components are properly styled
+      - Components integrate with Docusaurus
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - code
+      - components
+    dependencies:
+      - T014
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T018
+    title: Implement sidebar auto-generation from JSON manifests
+    description: Create functionality to automatically generate sidebars from JSON manifest files
+    acceptanceCriteria:
+      - Auto-generation script is implemented
+      - Sidebar reflects module structure from JSON
+      - Navigation hierarchy is maintained
+      - Auto-generation runs without errors
+      - Sidebar updates when JSON manifests change
+    priority: P0
+    estimate: 6 hours
+    labels:
+      - code
+      - docs
+    dependencies:
+      - T007
+      - T010
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T019
+    title: Set up content pipeline from Claude → Speckit → Docusaurus
+    description: Configure the automated content generation pipeline
+    acceptanceCriteria:
+      - Claude CLI integration is configured
+      - Speckit Plus workflow is set up
+      - Pipeline processes content correctly
+      - Content flows from generation to Docusaurus
+      - Pipeline runs without errors
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - config
+      - automation
+    dependencies:
+      - T001
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T020
+    title: Create JSON manifest structure for modules
+    description: Define and implement the JSON manifest structure for module metadata
+    acceptanceCriteria:
+      - modules.json includes all required fields
+      - Structure supports learning objectives
+      - Structure supports prerequisites
+      - Structure supports difficulty levels
+      - JSON schema is valid
+    priority: P0
+    estimate: 4 hours
+    labels:
+      - manifest
+      - config
+    dependencies:
+      - T007
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T021
+    title: Implement frontmatter rules for learning objectives, prerequisites, difficulty levels
+    description: Set up proper frontmatter configuration for educational content elements
+    acceptanceCriteria:
+      - Frontmatter includes learning objectives field
+      - Frontmatter includes prerequisites field
+      - Frontmatter includes difficulty level field
+      - Frontmatter validates properly
+      - Fields are properly processed by Docusaurus
+    priority: P0
+    estimate: 4 hours
+    labels:
+      - config
+      - docs
+    dependencies:
+      - T013
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T022
+    title: Create accessibility components for WCAG 2.1 AA compliance
+    description: Develop components that ensure accessibility compliance
+    acceptanceCriteria:
+      - Components meet WCAG 2.1 AA standards
+      - Alt text implementation is provided
+      - Keyboard navigation is supported
+      - Color contrast meets requirements
+      - Components pass accessibility audits
+    priority: P0
+    estimate: 6 hours
+    labels:
+      - components
+      - accessibility
+    dependencies:
+      - T014
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T023
+    title: Set up search functionality with full-text search capabilities
+    description: Configure search functionality for the Docusaurus site
+    acceptanceCriteria:
+      - Search functionality is enabled
+      - Full-text search works across all content
+      - Search results are relevant
+      - Search interface is user-friendly
+      - Search performs well
+    priority: P0
+    estimate: 5 hours
+    labels:
+      - config
+      - features
+    dependencies:
+      - T002
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T024
+    title: Implement navigation structure for linear and modular learning paths
+    description: Create navigation that supports both sequential and modular learning
+    acceptanceCriteria:
+      - Linear navigation is available
+      - Modular navigation is available
+      - Navigation clearly indicates progress
+      - Navigation supports both learning styles
+      - Navigation works across all devices
+    priority: P0
+    estimate: 6 hours
+    labels:
+      - config
+      - features
+    dependencies:
+      - T009
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T025
+    title: Add i18n support for multi-language content
+    description: Implement internationalization support for multiple languages
+    acceptanceCriteria:
+      - i18n configuration is set up
+      - Multiple languages are supported
+      - Content can be translated
+      - Language switching works properly
+      - Default language is properly set
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - config
+      - features
+    dependencies:
+      - T002
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T026
+    title: Create link checking script for validation
+    description: Develop a script to check for broken links across the site
+    acceptanceCriteria:
+      - Script identifies broken internal links
+      - Script identifies broken external links
+      - Script provides detailed reports
+      - Script integrates with build process
+      - Script runs without errors
+    priority: P1
+    estimate: 4 hours
+    labels:
+      - quality
+      - testing
+    dependencies: []
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T027
+    title: Set up build validation workflow
+    description: Create a validation process that runs during the build
+    acceptanceCriteria:
+      - Validation runs during build process
+      - Validation checks for common issues
+      - Validation provides clear error messages
+      - Build fails on validation errors
+      - Validation workflow is documented
+    priority: P1
+    estimate: 3 hours
+    labels:
+      - quality
+      - ci
+    dependencies:
+      - T011
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T028
+    title: Create PDF generation configuration with Puppeteer
+    description: Set up PDF generation workflow using Puppeteer
+    acceptanceCriteria:
+      - Puppeteer is properly configured
+      - PDF generation workflow is set up
+      - Generated PDFs are properly formatted
+      - PDFs include all necessary content
+      - Workflow runs without errors
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - config
+      - features
+    dependencies: []
+    responsibleRole: engineer
+    sprint: Sprint 1
+  - id: T029
+    title: Create content for Module 1: Introduction to Physical AI
+    description: Create complete content for the first module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T030
+    title: Create content for Module 2: Humanoid Mechanical Structure
+    description: Create complete content for the second module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T031
+    title: Create content for Module 3: Electronics & Sensors
+    description: Create complete content for the third module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T032
+    title: Create content for Module 4: Kinematics & Dynamics
+    description: Create complete content for the fourth module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T033
+    title: Create content for Module 5: Control Systems
+    description: Create complete content for the fifth module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T034
+    title: Create content for Module 6: Simulation & Digital Twin
+    description: Create complete content for the sixth module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T035
+    title: Create content for Module 7: AI Perception & Planning
+    description: Create complete content for the seventh module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T036
+    title: Create content for Module 8: Embodied Intelligence
+    description: Create complete content for the eighth module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T037
+    title: Create content for Module 9: Human-Robot Interaction
+    description: Create complete content for the ninth module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T038
+    title: Create content for Module 10: Basic Humanoid Project
+    description: Create complete content for the tenth module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T039
+    title: Create content for Module 11: Advanced Behaviors Project
+    description: Create complete content for the eleventh module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T040
+    title: Create content for Module 12: Future Directions & Research
+    description: Create complete content for the twelfth module including all required elements
+    acceptanceCriteria:
+      - Module content includes title and summary
+      - Module has 3-6 learning objectives
+      - Module includes key concepts section
+      - Module specifies prerequisites
+      - Module includes deliverables, lab activities, and expected outcomes
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - content
+    dependencies:
+      - T013
+    responsibleRole: writer
+    sprint: Sprint 2
+    userStory: US1
+  - id: T041
+    title: Generate SVG diagrams for Module 1: Introduction to Physical AI
+    description: Create all required SVG diagrams for the first module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T029
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T042
+    title: Generate SVG diagrams for Module 2: Humanoid Mechanical Structure
+    description: Create all required SVG diagrams for the second module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T030
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T043
+    title: Generate SVG diagrams for Module 3: Electronics & Sensors
+    description: Create all required SVG diagrams for the third module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T031
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T044
+    title: Generate SVG diagrams for Module 4: Kinematics & Dynamics
+    description: Create all required SVG diagrams for the fourth module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 10 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T032
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T045
+    title: Generate SVG diagrams for Module 5: Control Systems
+    description: Create all required SVG diagrams for the fifth module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T033
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T046
+    title: Generate SVG diagrams for Module 6: Simulation & Digital Twin
+    description: Create all required SVG diagrams for the sixth module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T034
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T047
+    title: Generate SVG diagrams for Module 7: AI Perception & Planning
+    description: Create all required SVG diagrams for the seventh module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 10 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T035
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T048
+    title: Generate SVG diagrams for Module 8: Embodied Intelligence
+    description: Create all required SVG diagrams for the eighth module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 10 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T036
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T049
+    title: Generate SVG diagrams for Module 9: Human-Robot Interaction
+    description: Create all required SVG diagrams for the ninth module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T037
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T050
+    title: Generate SVG diagrams for Module 10: Basic Humanoid Project
+    description: Create all required SVG diagrams for the tenth module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 12 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T038
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T051
+    title: Generate SVG diagrams for Module 11: Advanced Behaviors Project
+    description: Create all required SVG diagrams for the eleventh module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 12 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T039
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T052
+    title: Generate SVG diagrams for Module 12: Future Directions
+    description: Create all required SVG diagrams for the twelfth module
+    acceptanceCriteria:
+      - All required diagrams are generated in SVG format
+      - Diagrams are properly named and organized
+      - Diagrams meet accessibility standards with alt text
+      - Diagrams are referenced in the module content
+      - Diagrams render correctly in the documentation
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - diagrams
+      - assets
+    dependencies:
+      - T040
+    responsibleRole: designer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T053
+    title: Create code examples for Module 1
+    description: Develop all code examples for the first module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T029
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T054
+    title: Create code examples for Module 2
+    description: Develop all code examples for the second module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T030
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T055
+    title: Create code examples for Module 3
+    description: Develop all code examples for the third module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T031
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T056
+    title: Create code examples for Module 4
+    description: Develop all code examples for the fourth module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T032
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T057
+    title: Create code examples for Module 5
+    description: Develop all code examples for the fifth module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T033
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T058
+    title: Create code examples for Module 6
+    description: Develop all code examples for the sixth module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T034
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T059
+    title: Create code examples for Module 7
+    description: Develop all code examples for the seventh module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T035
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T060
+    title: Create code examples for Module 8
+    description: Develop all code examples for the eighth module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T036
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T061
+    title: Create code examples for Module 9
+    description: Develop all code examples for the ninth module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T037
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T062
+    title: Create code examples for Module 10
+    description: Develop all code examples for the tenth module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 10 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T038
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T063
+    title: Create code examples for Module 11
+    description: Develop all code examples for the eleventh module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 10 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T039
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T064
+    title: Create code examples for Module 12
+    description: Develop all code examples for the twelfth module
+    acceptanceCriteria:
+      - All required code examples are implemented
+      - Code examples are properly formatted and syntax-highlighted
+      - Code examples include explanations and comments
+      - Code examples are tested and functional
+      - Code examples are referenced in the module content
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - code
+      - examples
+    dependencies:
+      - T040
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T065
+    title: Create hardware BOMs for Module 2
+    description: Develop bills of materials for the second module
+    acceptanceCriteria:
+      - BOM includes all required components
+      - BOM specifies quantities and specifications
+      - BOM includes supplier information
+      - BOM includes cost estimates
+      - BOM is properly formatted and organized
+    priority: P1
+    estimate: 4 hours
+    labels:
+      - hardware
+      - docs
+    dependencies:
+      - T030
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T066
+    title: Create hardware BOMs for Module 3
+    description: Develop bills of materials for the third module
+    acceptanceCriteria:
+      - BOM includes all required components
+      - BOM specifies quantities and specifications
+      - BOM includes supplier information
+      - BOM includes cost estimates
+      - BOM is properly formatted and organized
+    priority: P1
+    estimate: 4 hours
+    labels:
+      - hardware
+      - docs
+    dependencies:
+      - T031
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T067
+    title: Create hardware BOMs for Module 10
+    description: Develop bills of materials for the tenth module
+    acceptanceCriteria:
+      - BOM includes all required components
+      - BOM specifies quantities and specifications
+      - BOM includes supplier information
+      - BOM includes cost estimates
+      - BOM is properly formatted and organized
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - hardware
+      - docs
+    dependencies:
+      - T038
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T068
+    title: Create hardware BOMs for Module 11
+    description: Develop bills of materials for the eleventh module
+    acceptanceCriteria:
+      - BOM includes all required components
+      - BOM specifies quantities and specifications
+      - BOM includes supplier information
+      - BOM includes cost estimates
+      - BOM is properly formatted and organized
+    priority: P1
+    estimate: 6 hours
+    labels:
+      - hardware
+      - docs
+    dependencies:
+      - T039
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T069
+    title: Create assembly guides for Module 10
+    description: Develop step-by-step assembly guides for the tenth module
+    acceptanceCriteria:
+      - Assembly guide includes step-by-step instructions
+      - Guide includes diagrams and images
+      - Guide specifies required tools
+      - Guide includes safety warnings
+      - Guide is properly formatted and organized
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - hardware
+      - docs
+    dependencies:
+      - T067
+    responsibleRole: writer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T070
+    title: Create assembly guides for Module 11
+    description: Develop step-by-step assembly guides for the eleventh module
+    acceptanceCriteria:
+      - Assembly guide includes step-by-step instructions
+      - Guide includes diagrams and images
+      - Guide specifies required tools
+      - Guide includes safety warnings
+      - Guide is properly formatted and organized
+    priority: P1
+    estimate: 8 hours
+    labels:
+      - hardware
+      - docs
+    dependencies:
+      - T068
+    responsibleRole: writer
+    sprint: Sprint 3
+    userStory: US2
+  - id: T071
+    title: Create course material templates for educators
+    description: Develop templates for educators to use the book as course material
+    acceptanceCriteria:
+      - Templates include learning objectives
+      - Templates include assessment criteria
+      - Templates include suggested schedules
+      - Templates include supplementary materials
+      - Templates are properly formatted and organized
+    priority: P2
+    estimate: 6 hours
+    labels:
+      - docs
+      - education
+    dependencies:
+      - T029
+    responsibleRole: writer
+    sprint: Sprint 3
+    userStory: US3
+  - id: T072
+    title: Implement assessment tools for each module
+    description: Create assessment tools to help educators evaluate student progress
+    acceptanceCriteria:
+      - Assessment tools are created for each module
+      - Tools include quizzes and exercises
+      - Tools align with learning objectives
+      - Tools include answer keys
+      - Tools are properly formatted and organized
+    priority: P2
+    estimate: 10 hours
+    labels:
+      - code
+      - education
+    dependencies:
+      - T071
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US3
+  - id: T073
+    title: Create classroom implementation guides for each module
+    description: Develop guides to help educators implement each module in classroom settings
+    acceptanceCriteria:
+      - Implementation guide is created for each module
+      - Guides include teaching tips
+      - Guides include time estimates
+      - Guides include common student challenges
+      - Guides are properly formatted and organized
+    priority: P2
+    estimate: 12 hours
+    labels:
+      - docs
+      - education
+    dependencies:
+      - T071
+    responsibleRole: writer
+    sprint: Sprint 3
+    userStory: US3
+  - id: T074
+    title: Add educator-specific navigation in docusaurus.config.js
+    description: Configure special navigation options for educators
+    acceptanceCriteria:
+      - Educator navigation is properly configured
+      - Navigation includes educator resources
+      - Navigation is accessible to authorized users
+      - Navigation integrates with existing structure
+      - Configuration is documented
+    priority: P2
+    estimate: 4 hours
+    labels:
+      - config
+      - education
+    dependencies:
+      - T071
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US3
+  - id: T075
+    title: Create educator dashboard component
+    description: Develop a dashboard component for educators to access resources
+    acceptanceCriteria:
+      - Dashboard component is created
+      - Component includes resource links
+      - Component shows progress tracking
+      - Component is properly styled
+      - Component integrates with Docusaurus
+    priority: P2
+    estimate: 8 hours
+    labels:
+      - code
+      - education
+    dependencies:
+      - T074
+    responsibleRole: engineer
+    sprint: Sprint 3
+    userStory: US3
+  - id: T076
+    title: Perform comprehensive link checking across all modules
+    description: Check all links in the documentation for validity
+    acceptanceCriteria:
+      - All internal links are verified
+      - All external links are verified
+      - Broken links are identified and fixed
+      - Link report is generated
+      - No broken links remain
+    priority: P0
+    estimate: 6 hours
+    labels:
+      - quality
+      - testing
+    dependencies:
+      - T040
+    responsibleRole: engineer
+    sprint: Sprint 4
+  - id: T077
+    title: Conduct accessibility audit for WCAG 2.1 AA compliance
+    description: Perform comprehensive accessibility audit to ensure compliance
+    acceptanceCriteria:
+      - Accessibility audit is performed
+      - WCAG 2.1 AA compliance is verified
+      - Issues are identified and documented
+      - Compliance fixes are implemented
+      - Audit report is generated
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - quality
+      - accessibility
+    dependencies:
+      - T022
+    responsibleRole: engineer
+    sprint: Sprint 4
+  - id: T078
+    title: Optimize site performance for mobile responsiveness
+    description: Optimize the site for mobile devices and improve performance
+    acceptanceCriteria:
+      - Site is fully responsive on mobile devices
+      - Page load times are optimized
+      - Performance metrics meet requirements
+      - Mobile navigation works properly
+      - Performance report is generated
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - quality
+      - performance
+    dependencies: []
+    responsibleRole: engineer
+    sprint: Sprint 4
+  - id: T079
+    title: Test cross-browser compatibility
+    description: Test the site across different browsers to ensure compatibility
+    acceptanceCriteria:
+      - Site is tested on Chrome
+      - Site is tested on Firefox
+      - Site is tested on Safari
+      - Site is tested on Edge
+      - Compatibility issues are fixed
+    priority: P0
+    estimate: 6 hours
+    labels:
+      - quality
+      - testing
+    dependencies: []
+    responsibleRole: engineer
+    sprint: Sprint 4
+  - id: T080
+    title: Validate PDF generation workflow with all modules
+    description: Test the PDF generation workflow with all completed modules
+    acceptanceCriteria:
+      - PDF generation workflow is tested
+      - All modules are included in PDF
+      - PDF formatting is correct
+      - PDF includes proper navigation
+      - Workflow functions without errors
+    priority: P0
+    estimate: 6 hours
+    labels:
+      - quality
+      - features
+    dependencies:
+      - T028
+    responsibleRole: engineer
+    sprint: Sprint 4
+  - id: T081
+    title: Perform content review and proofreading for all modules
+    description: Review and proofread all content for accuracy and quality
+    acceptanceCriteria:
+      - All modules are reviewed for accuracy
+      - Content is proofread for errors
+      - Technical content is verified
+      - Learning objectives are validated
+      - Review report is generated
+    priority: P0
+    estimate: 12 hours
+    labels:
+      - quality
+      - content
+    dependencies:
+      - T040
+    responsibleRole: editor
+    sprint: Sprint 4
+  - id: T082
+    title: Set up production deployment configuration
+    description: Configure the site for production deployment
+    acceptanceCriteria:
+      - Production configuration is set up
+      - Deployment process is automated
+      - Environment variables are configured
+      - Security settings are applied
+      - Configuration is documented
+    priority: P0
+    estimate: 6 hours
+    labels:
+      - config
+      - deployment
+    dependencies:
+      - T011
+    responsibleRole: engineer
+    sprint: Sprint 4
+  - id: T083
+    title: Create documentation and maintenance guides
+    description: Develop documentation for ongoing maintenance and updates
+    acceptanceCriteria:
+      - Maintenance guide is created
+      - Update procedures are documented
+      - Troubleshooting guide is created
+      - Documentation is comprehensive
+      - Documentation is properly formatted
+    priority: P0
+    estimate: 8 hours
+    labels:
+      - docs
+      - maintenance
+    dependencies: []
+    responsibleRole: writer
+    sprint: Sprint 4
+  - id: T084
+    title: Implement final quality assurance checks
+    description: Perform final quality assurance checks before deployment
+    acceptanceCriteria:
+      - All quality checks are performed
+      - Issues are identified and fixed
+      - Performance metrics are verified
+      - Accessibility compliance is confirmed
+      - Final QA report is generated
+    priority: P0
+    estimate: 6 hours
+    labels:
+      - quality
+      - testing
+    dependencies:
+      - T076
+      - T077
+      - T078
+      - T079
+      - T080
+    responsibleRole: engineer
+    sprint: Sprint 4
+  - id: T085
+    title: Deploy to production environment
+    description: Deploy the completed site to the production environment
+    acceptanceCriteria:
+      - Site is deployed to production
+      - Deployment is verified as successful
+      - All features are working in production
+      - Performance is verified in production
+      - Deployment is documented
+    priority: P0
+    estimate: 4 hours
+    labels:
+      - deployment
+      - production
+    dependencies:
+      - T084
+    responsibleRole: engineer
+    sprint: Sprint 4
+
+summary:
+  totalTasks: 85
+  sprints:
+    Sprint 1:
+      tasks: 28
+      duration: 2 weeks
+      focus: Setup & Foundation
+    Sprint 2:
+      tasks: 12
+      duration: 3 weeks
+      focus: Content Creation
+    Sprint 3:
+      tasks: 25
+      duration: 3 weeks
+      focus: Diagrams, Code & Hardware Integration
+    Sprint 4:
+      tasks: 10
+      duration: 2 weeks
+      focus: QA & Publishing
+  userStories:
+    US1:
+      tasks: 12
+      priority: P1
+      description: Beginner Learner Content
+    US2:
+      tasks: 30
+      priority: P2
+      description: Advanced Content & Features
+    US3:
+      tasks: 5
+      priority: P3
+      description: Educator Features
+  totalEstimate: "208 hours"

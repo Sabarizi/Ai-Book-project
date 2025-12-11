@@ -1,0 +1,298 @@
+openapi: 3.0.0
+info:
+  title: Physical AI & Humanoid Robotics Book API
+  description: API for managing book content, modules, and associated resources
+  version: 1.0.0
+paths:
+  /api/modules:
+    get:
+      summary: Get all book modules
+      responses:
+        '200':
+          description: List of all modules
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Module'
+  /api/modules/{id}:
+    get:
+      summary: Get a specific module
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Module details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Module'
+  /api/modules/{id}/diagrams:
+    get:
+      summary: Get diagrams for a specific module
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of diagrams for the module
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Diagram'
+  /api/modules/{id}/code-examples:
+    get:
+      summary: Get code examples for a specific module
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of code examples for the module
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CodeExample'
+  /api/hardware/components:
+    get:
+      summary: Get all hardware components
+      responses:
+        '200':
+          description: List of all hardware components
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HardwareComponent'
+  /api/manifest/modules:
+    get:
+      summary: Get module manifest
+      responses:
+        '200':
+          description: Module manifest with navigation and dependencies
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Manifest'
+components:
+  schemas:
+    Module:
+      type: object
+      required:
+        - id
+        - title
+        - summary
+        - learningObjectives
+        - difficultyLevel
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the module
+        title:
+          type: string
+          description: Title of the module
+        summary:
+          type: string
+          description: Brief summary of the module content
+        learningObjectives:
+          type: array
+          items:
+            type: string
+          description: List of learning objectives for the module
+        keyConcepts:
+          type: array
+          items:
+            type: string
+          description: Key concepts covered in the module
+        prerequisites:
+          type: string
+          description: Prerequisites for the module
+        deliverables:
+          type: array
+          items:
+            type: string
+          description: Deliverables expected from the module
+        labActivities:
+          type: string
+          description: Description of lab activities
+        expectedOutcomes:
+          type: string
+          description: Expected learning outcomes
+        difficultyLevel:
+          type: string
+          enum: [Beginner, Beginner to Intermediate, Intermediate, Intermediate to Advanced, Advanced]
+          description: Difficulty level of the module
+        requiredDiagrams:
+          type: array
+          items:
+            type: string
+          description: List of required diagrams for the module
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    Diagram:
+      type: object
+      required:
+        - id
+        - name
+        - moduleId
+        - path
+        - altText
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the diagram
+        moduleId:
+          type: string
+          description: Reference to the module this diagram belongs to
+        name:
+          type: string
+          description: Name of the diagram
+        description:
+          type: string
+          description: Description of the diagram
+        format:
+          type: string
+          enum: [SVG, PNG]
+          description: Format of the diagram file
+        path:
+          type: string
+          description: Path to the diagram file
+        altText:
+          type: string
+          description: Alternative text for accessibility
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    CodeExample:
+      type: object
+      required:
+        - id
+        - title
+        - moduleId
+        - language
+        - code
+        - path
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the code example
+        moduleId:
+          type: string
+          description: Reference to the module this code example belongs to
+        title:
+          type: string
+          description: Title of the code example
+        description:
+          type: string
+          description: Description of the code example
+        language:
+          type: string
+          description: Programming language of the code example
+        code:
+          type: string
+          description: The actual code content
+        path:
+          type: string
+          description: Path to the code example file
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    HardwareComponent:
+      type: object
+      required:
+        - id
+        - name
+        - category
+        - specifications
+        - quantity
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the hardware component
+        name:
+          type: string
+          description: Name of the hardware component
+        category:
+          type: string
+          description: Category of the hardware component
+        specifications:
+          type: object
+          description: Specifications of the hardware component
+        quantity:
+          type: number
+          description: Required quantity
+        supplier:
+          type: string
+          description: Recommended supplier
+        partNumber:
+          type: string
+          description: Part number from supplier
+        cost:
+          type: number
+          description: Cost per unit
+        link:
+          type: string
+          format: uri
+          description: Link to purchase the component
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    Manifest:
+      type: object
+      required:
+        - id
+        - modules
+        - navigation
+      properties:
+        id:
+          type: string
+          description: Identifier for the manifest
+        modules:
+          type: array
+          items:
+            type: string
+          description: List of module references
+        navigation:
+          type: object
+          description: Navigation structure for the book
+        dependencies:
+          type: object
+          description: Cross-module dependencies
+        version:
+          type: string
+          description: Version of the manifest
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
