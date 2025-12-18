@@ -44,6 +44,12 @@ const config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: '/js/textSelectionHandler.js',
+      defer: true,
+    },
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

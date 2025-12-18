@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import Chatbot from '../components/Chatbot/Chatbot';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -16,7 +17,8 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/modules/module-01-introduction-physical-ai/introduction-physical-ai">
-            Start Reading - Module 1
+            Start Reading - Module 
+            ``
           </Link>
         </div>
       </div>
@@ -56,6 +58,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+       
       </main>
     </Layout>
   );

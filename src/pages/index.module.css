@@ -102,3 +102,20 @@ html[data-theme='dark'] .heroBanner p {
 .padding-horiz--md {
   padding: 0 1rem;
 }
+
+/* Chatbot section styling */
+.chatbotSection {
+  background: #0d1117;
+  padding: 4rem 0;
+  color: white;
+}
+
+.chatbotTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+html[data-theme='dark'] .chatbotSection {
+  background: #0d1117;
+}
